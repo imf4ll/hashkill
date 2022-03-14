@@ -7,6 +7,7 @@ import (
     "fmt"
     "os/exec"
     "sync"
+    "context"
 
     "github.com/z3oxs/hashkill/utils"
     "github.com/spf13/cobra"
@@ -88,7 +89,7 @@ func crack(algo, wordlist, hash, ftype string) {
         scannerHashs := bufio.NewScanner(hashFile)
         for scannerHashs.Scan() {
             wg.Add(1)
-            go grep(scannerHashs.Text(), fmt.Sprintf("%v/wordlists/%v.txt", os.Getenv("HOME"), algo))
+            go grep(scannerHashs.Text(), fmt.Sprintf("%v/.config/hashkill/%v.txt", os.Getenv("HOME"), algo))
 
         }
 
@@ -102,6 +103,7 @@ func crack(algo, wordlist, hash, ftype string) {
 }
 
 func grep(hash, wordlist string) {
+    
     if hash  == "" || wordlist == "" {
         log.Fatal("Hash or wordlist cannot be empty.")
 
@@ -110,10 +112,20 @@ func grep(hash, wordlist string) {
     cmd := exec.Command("grep", hash, wordlist)
     stdout, err := cmd.Output()
     if err != nil {
-        log.Fatal("Wordlist not exists in .config")
+        if fmt.Sprintf("%v", err) != "exit status 1" {
+            log.Fatal("Wordlist not exists in wordlists folder.")
+        
+        } else {
+            _, cancel := context.WithCancel(context.Background())
+            cancel()
+            
+        }
     }
 
-    fmt.Printf("\033[32m[+] \033[m%v", string(stdout))
+    if string(stdout) != "" {
+        fmt.Printf("\033[32m[+] \033[m%v", string(stdout))
+    
+    }
 
     wg.Done()
 }
