@@ -7,8 +7,7 @@ import (
     "fmt"
     "os/exec"
     "sync"
-    "context"
-
+    
     "github.com/z3oxs/hashkill/utils"
     "github.com/spf13/cobra"
 )
@@ -114,10 +113,6 @@ func grep(hash, wordlist string) {
         if fmt.Sprintf("%v", err) != "exit status 1" {
             log.Fatal("Wordlist not exists in wordlists folder.")
         
-        } else {
-            _, cancel := context.WithCancel(context.Background())
-            cancel()
-            
         }
     }
 
