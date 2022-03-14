@@ -3,6 +3,11 @@
 <img src="screenshot.png" />
 
 <br><br>
+## ♻️ Changelog v0.1.1
+- Separated methods/functions by particular files
+- Some fixes
+
+<br><br>
 ## ❓ What is this?
 - A simple golang script to generate pre-hashed files to speed up password cracking, using standard methods to speed up hash locating.
 
