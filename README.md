@@ -7,22 +7,21 @@
 - A simple golang script to generate pre-hashed files to speed up password cracking, using standard methods to speed up hash locating.
 
 <br><br>
-Download done hashlists:
-`make download<algorithm>`
-or
-`make downloadall` (Up to 20GB+ download)
+## 🤖 Instructions:
+- Download done hashlists:
+`make download` (Up to 700MB+ download)
 
-Create custom pre-hashed files:
+- Create custom pre-hashed files:
 `hashkill -c -w <wordlist> -a <algorithm> -n <file name>`
 
-Crack hashs (unique):
+- Crack hashs (unique):
 `hashkill -C -a <algorithm> -H <hash>`
 
-Crack hashs (multiple/files):
+- Crack hashs (multiple/files):
 `hashkill -C -a <algorithm> -f <file path>`
 
 <br><br>
-Available hashtypes:
+## ✅ Available hashtypes:
 - md5
 - sha1
 - sha224
