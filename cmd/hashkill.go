@@ -103,7 +103,6 @@ func crack(algo, wordlist, hash, ftype string) {
 }
 
 func grep(hash, wordlist string) {
-    
     if hash  == "" || wordlist == "" {
         log.Fatal("Hash or wordlist cannot be empty.")
 
