@@ -1,10 +1,15 @@
-# Hashkill
-
-<img src="screenshot.png" />
+```
+    ______               ______ ______ ________________
+    ___  /_______ __________  /____  /____(_)__  /__  /
+    __  __ \  __ `/_  ___/_  __ \_  //_/_  /__  /__  / 
+    _  / / / /_/ /_(__  )_  / / /  ,<  _  / _  / _  /  
+    /_/ /_/\__,_/ /____/ /_/ /_//_/|_| /_/  /_/  /_/
+```
 
 <br><br>
-## ♻️ Changelog v0.1.1
-- Separated methods/functions by particular files
+## ♻️ Changelog v0.1.2
+- Performance update (Reduced average 42s to 27s on creating, about +65% speed, remembering, we use only CPU to generated the hashs, for now)
+- Added command 'version'
 - Some fixes
 
 <br><br>

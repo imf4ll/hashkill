@@ -5,7 +5,7 @@ import (
     "log"
     "bufio"
     "fmt"
-) 
+)
 
 func create(algo, wordlist, hashedwl string) {
     file, err := os.Open(wordlist)
@@ -27,8 +27,9 @@ func create(algo, wordlist, hashedwl string) {
     fmt.Println("\033[32m[+] \033[mCreating hashed wordlist named\033[33m", hashedwl, "\033[m")
 
     scanner := bufio.NewScanner(file)
+    writer := bufio.NewWriter(newFile)
     for scanner.Scan() {
-        newFile.WriteString(fmt.Sprintf("%v:%v\n", Crypto(algo, scanner.Text()), scanner.Text()))
+        writer.WriteString(fmt.Sprintf("%v:%v\n", Crypto(algo, scanner.Text()), scanner.Text()))
     
     }
 }

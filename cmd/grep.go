@@ -6,7 +6,9 @@ import (
     "fmt"
 )
 
-func grep(hash, wordlist string) {
+func grep(hash, wordlist, typeS string) {
+    if typeS == "file" { defer wg.Done() }
+
     if hash  == "" || wordlist == "" {
         log.Fatal("Hash or wordlist cannot be empty.")
 
@@ -25,6 +27,4 @@ func grep(hash, wordlist string) {
         fmt.Printf("\033[32m[+] \033[m%v", string(stdout))
     
     }
-
-    wg.Done()
 }

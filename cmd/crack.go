@@ -20,15 +20,14 @@ func crack(algo, wordlist, hash, ftype string) {
         scannerHashs := bufio.NewScanner(hashFile)
         for scannerHashs.Scan() {
             wg.Add(1)
-            go grep(scannerHashs.Text(), fmt.Sprintf("%v/.config/hashkill/%v.txt", os.Getenv("HOME"), algo))
-
+            
+            go grep(scannerHashs.Text(), fmt.Sprintf("%v/.config/hashkill/%v.txt", os.Getenv("HOME"), algo), "file")
         }
 
+        wg.Wait()
+    
     } else {
-        wg.Add(1)
-        go grep(hash, fmt.Sprintf("%v/.config/hashkill/%v.txt", os.Getenv("HOME"), algo))
+        grep(hash, fmt.Sprintf("%v/.config/hashkill/%v.txt", os.Getenv("HOME"), algo), "hash")
 
     }
-
-    wg.Wait()
 }

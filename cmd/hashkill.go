@@ -2,7 +2,8 @@ package cmd
 
 import (
     "sync"
-    
+    "fmt"
+
     "github.com/z3oxs/hashkill/utils"
     "github.com/spf13/cobra"
 )
@@ -13,6 +14,7 @@ func Hashkill(c *cobra.Command, args []string) {
     algo, _ := c.Flags().GetString("algo")
     hashtype, _ := c.Flags().GetBool("hashtype")
     wordlist, _ := c.Flags().GetString("wordlist")
+    version, _ := c.Flags().GetBool("version")
     hashedwl, _ := c.Flags().GetString("name")
     file, _ := c.Flags().GetString("file")
     hash, _ := c.Flags().GetString("hash")
@@ -21,6 +23,12 @@ func Hashkill(c *cobra.Command, args []string) {
 
     if hashtype {
         utils.Hashtype()
+
+        return
+    }
+
+    if version {
+        fmt.Println("v0.1.2 (03/16/2022)")
 
         return
     }

@@ -10,7 +10,7 @@ func Banner(mode, algo, filename, wordlist, file, hash string) {
 [>] Wordlist -> %v
 [>] File -> %v
 [>] Hash -> %v
-[>] Version -> 0.1.1
+[>] Version -> 0.1.2
 [>] Repo -> https://github.com/z3oxs/hashkill
 =====================================================
 

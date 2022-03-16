@@ -16,6 +16,7 @@ func init() {
     rootCmd.PersistentFlags().BoolP("create", "c", false, "Create hashed wordlist")
     rootCmd.PersistentFlags().BoolP("crack", "C", false, "Break hashs mode")
     rootCmd.PersistentFlags().StringP("algo", "a", "md5", "Hash algorithm")
+    rootCmd.PersistentFlags().BoolP("version", "v", false, "Version")
 }
 
 func Execute() {
