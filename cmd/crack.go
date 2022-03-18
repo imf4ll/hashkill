@@ -2,7 +2,6 @@ package cmd
 
 import (
     "os"
-    "log"
     "bufio"
     "fmt"
 )
@@ -11,7 +10,7 @@ func crack(algo, wordlist, hash, ftype string) {
     if ftype == "file" {
         hashFile, err := os.Open(hash)
         if err != nil {
-            log.Fatal("Unable to read the hashs file.")
+            l.Fatal("\033[1;31m[-] Unable to read the hashs file.\033[m")
 
         }
 
@@ -21,13 +20,13 @@ func crack(algo, wordlist, hash, ftype string) {
         for scannerHashs.Scan() {
             wg.Add(1)
             
-            go grep(scannerHashs.Text(), fmt.Sprintf("%v/.config/hashkill/%v.txt", os.Getenv("HOME"), algo), "file")
+            go find(scannerHashs.Text(), fmt.Sprintf("%v/.config/hashkill/%v.txt", os.Getenv("HOME"), algo), "file")
         }
 
         wg.Wait()
     
     } else {
-        grep(hash, fmt.Sprintf("%v/.config/hashkill/%v.txt", os.Getenv("HOME"), algo), "hash")
+        find(hash, fmt.Sprintf("%v/.config/hashkill/%v.txt", os.Getenv("HOME"), algo), "hash")
 
     }
 }

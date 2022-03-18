@@ -3,12 +3,15 @@ package cmd
 import (
     "sync"
     "fmt"
+    "log"
+    "os"
 
     "github.com/z3oxs/hashkill/utils"
     "github.com/spf13/cobra"
 )
 
 var wg sync.WaitGroup
+var l = log.New(os.Stdout, "", 0)
 
 func Hashkill(c *cobra.Command, args []string) {
     algo, _ := c.Flags().GetString("algo")
@@ -28,7 +31,7 @@ func Hashkill(c *cobra.Command, args []string) {
     }
 
     if version {
-        fmt.Println("v0.1.2 (03/16/2022)")
+        fmt.Println("v0.1.3 (03/18/2022)")
 
         return
     }

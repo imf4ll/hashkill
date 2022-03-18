@@ -11,10 +11,9 @@
 ```
 
 <br><br>
-## ♻️ Changelog v0.1.2
-- Performance update (Reduced average 42s to 27s on creating, about +65% speed, remembering, we use only CPU to generated the hashs, for now)
-- Added command 'version'
-- Some fixes
+## ♻️ Changelog v0.1.3
+- Added Windows compatibility through the "findstr"
+- Some little additions
 
 <br><br>
 ## ❓ What is this?
