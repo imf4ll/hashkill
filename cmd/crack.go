@@ -10,7 +10,7 @@ func crack(algo, wordlist, hash, ftype string) {
     if ftype == "file" {
         hashFile, err := os.Open(hash)
         if err != nil {
-            l.Fatal("\033[1;31m[-] Unable to read the hashs file.\033[m")
+            l.Fatal("\033[1;31m[✘]\033[m Unable to read the hashs file.")
 
         }
 

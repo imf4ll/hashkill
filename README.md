@@ -11,9 +11,8 @@
 ```
 
 <br><br>
-## ♻️ Changelog v0.1.3
-- Added Windows compatibility through the "findstr"
-- Some little additions
+## ♻️ Changelog v0.1.4
+- New output style
 
 <br><br>
 ## ❓ What is this?

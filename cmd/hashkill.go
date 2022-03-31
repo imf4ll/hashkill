@@ -31,7 +31,7 @@ func Hashkill(c *cobra.Command, args []string) {
     }
 
     if version {
-        fmt.Println("v0.1.3 (03/18/2022)")
+        fmt.Println("\033[1;32m[🗸]\033[m v0.1.4 (03/31/2022)")
 
         return
     }

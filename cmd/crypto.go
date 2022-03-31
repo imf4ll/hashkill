@@ -32,7 +32,7 @@ func Crypto(algo, word string) string {
         case "blake2b_256": result = fmt.Sprintf("%x", blake2b.Sum256([]byte(word)))
         case "blake2b_384": result = fmt.Sprintf("%x", blake2b.Sum384([]byte(word)))
         case "blake2b_512": result = fmt.Sprintf("%x", blake2b.Sum512([]byte(word)))
-        default: log.Fatal("Invalid hashtype")
+        default: log.Fatal("\033[1;31m[✘]\033[m Invalid hashtype.")
     }
     
     return result
