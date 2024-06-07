@@ -3,16 +3,14 @@ package utils
 import "fmt"
 
 func Banner(mode, algo, filename, wordlist, file, hash string) {
-    fmt.Printf(`=====================================================
-➤ Mode: %v
-➤ Algorithm: %v
-➤ Filename: %v
-➤ Wordlist: %v
-➤ File: %v
-➤ Hash: %v
-➤ Version: 0.1.4
-➤ Repo: https://github.com/z3oxs/hashkill
-=====================================================
+    banner := "=====================================================\n"
+    if mode != "" { banner += fmt.Sprintf("➤ Mode: %v\n", mode) }
+    if algo != "" { banner += fmt.Sprintf("➤ Algorithm: %v\n", algo) }
+    if filename != "" { banner += fmt.Sprintf("➤ Filename: %v\n", filename) }
+    if wordlist != "" { banner += fmt.Sprintf("➤ Wordlist: %v\n", wordlist) }
+    if file != "" { banner += fmt.Sprintf("➤ File: %v\n", file) }
+    if hash != "" { banner += fmt.Sprintf("➤ Hash: %v\n", hash) }
+    banner += "=====================================================\n"
 
-`, mode, algo, filename, wordlist, file, hash)
+    fmt.Println(banner)
 }

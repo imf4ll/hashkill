@@ -1,9 +1,8 @@
 package cmd
 
 import (
-    "os"
-    "bufio"
-    "fmt"
+	"bufio"
+	"os"
 )
 
 func crack(algo, wordlist, hash, ftype string) {
@@ -20,13 +19,13 @@ func crack(algo, wordlist, hash, ftype string) {
         for scannerHashs.Scan() {
             wg.Add(1)
             
-            go find(scannerHashs.Text(), fmt.Sprintf("%v/.config/hashkill/%v.txt", os.Getenv("HOME"), algo), "file")
+            go find(scannerHashs.Text(), wordlist, "file")
         }
 
         wg.Wait()
     
     } else {
-        find(hash, fmt.Sprintf("%v/.config/hashkill/%v.txt", os.Getenv("HOME"), algo), "hash")
+        find(hash, wordlist, "hash")
 
     }
 }

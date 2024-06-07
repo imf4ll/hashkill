@@ -11,8 +11,9 @@
 ```
 
 <br><br>
-## ♻️ Changelog v0.1.4
-- New output style
+## ♻️ Changelog v0.1.5
+- Removed AnonFiles wordlist download (R.I.P. AnonFiles)
+- Fixed 'wordlist not in folder' error
 
 <br><br>
 ## ❓ What is this?
@@ -57,7 +58,5 @@
 `git clone https://github.com/z3oxs/hashkill` or Download ZIP and unzip;<br><br>
 ### Move to repository:<br>
 `cd hashkill`<br><br>
-### Config:<br>
-`make install`
 ### Run:<br>
 `hashkill --help`
